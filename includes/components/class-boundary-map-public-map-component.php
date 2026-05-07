@@ -58,12 +58,6 @@ class Boundary_Map_Public_Map_Component
                     </div>
                 </form>
                 <!--<div id="map-legend" class="map-legend"></div> -->
-                <?php if ($show_sidebar_panel) : ?>
-                <div id="sidebar">
-                    <div id="entry-list"></div>
-                    <div id="entry-details" class="p-2"></div>
-                </div>
-                <?php endif; ?>
             </div>
         </div>
         <?php

@@ -139,49 +139,6 @@
   position: relative;
 }
 
-.ach-map-admin .ach-config-map-legend {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  z-index: 500;
-  pointer-events: none;
-  min-width: 170px;
-  max-width: 220px;
-  padding: 18px 20px;
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 22px;
-  box-shadow: 0 14px 36px rgba(17, 24, 39, 0.16);
-  backdrop-filter: blur(8px);
-}
-
-.ach-map-admin .ach-config-map-legend[hidden] {
-  display: none;
-}
-
-.ach-map-admin .ach-config-map-legend__title {
-  margin: 0 0 12px;
-  font-size: 18px;
-  line-height: 1.2;
-}
-
-.ach-map-admin .ach-config-map-legend__item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.ach-map-admin .ach-config-map-legend__item + .ach-config-map-legend__item {
-  margin-top: 10px;
-}
-
-.ach-map-admin .ach-config-map-legend__swatch {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-  border-radius: 999px;
-  background: #4B7CD5;
-}
-
 .ach-map-admin.ach-config-page {
   max-width: 1480px;
 }
@@ -263,6 +220,7 @@
 }
 
 .ach-map-admin .ach-support-card {
+  margin: 18px 0 24px;
   border-color: #dba617;
   background: linear-gradient(180deg, #fffdf6 0%, #ffffff 100%);
 }
@@ -469,10 +427,4 @@
     height: 420px;
   }
 
-  .ach-map-admin .ach-config-map-legend {
-    top: 14px;
-    left: 14px;
-    min-width: 150px;
-    padding: 14px 16px;
-  }
 }

@@ -22,6 +22,21 @@ class Boundary_Map_Config_Page_Renderer
                 <div class="notice notice-success is-dismissible"><p><?php echo esc_html($notice_message); ?></p></div>
             <?php endif; ?>
 
+            <?php if ($support_url !== '') : ?>
+                <section class="ach-entry-card ach-support-card">
+                    <div class="ach-entry-card__header">
+                        <span class="ach-support-badge"><?php esc_html_e('Support', 'boundary-map'); ?></span>
+                        <h2><?php esc_html_e('Enjoying the plugin?', 'boundary-map'); ?></h2>
+                        <p><?php esc_html_e('If Boundary Map is helping your site, you can support future updates and maintenance with a coffee.', 'boundary-map'); ?></p>
+                    </div>
+                    <p class="ach-support-actions">
+                        <a href="<?php echo esc_url($support_url); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer">
+                            <?php esc_html_e('Support on Buy Me a Coffee', 'boundary-map'); ?>
+                        </a>
+                    </p>
+                </section>
+            <?php endif; ?>
+
             <form method="post" class="ach-form ach-config-form">
                 <?php wp_nonce_field('boundary_map_save_config'); ?>
 
@@ -122,7 +137,6 @@ class Boundary_Map_Config_Page_Renderer
                             </div>
                             <div class="ach-config-map-wrap">
                                 <div id="ach-config-map"></div>
-                                <div id="ach-config-map-legend" class="ach-config-map-legend" hidden></div>
                             </div>
                         </div>
 
@@ -232,21 +246,6 @@ class Boundary_Map_Config_Page_Renderer
                             <textarea id="ach-config-shortcode-output" class="large-text code" rows="3" readonly><?php echo esc_textarea('[boundary_map]'); ?></textarea>
                             <p class="description"><?php esc_html_e('Generate the shortcode after choosing Australia, a boundary level, a state or territory, or a specific region/division.', 'boundary-map'); ?></p>
                         </div>
-
-                        <?php if ($support_url !== '') : ?>
-                            <section class="ach-entry-card ach-support-card">
-                                <div class="ach-entry-card__header">
-                                    <span class="ach-support-badge"><?php esc_html_e('Support', 'boundary-map'); ?></span>
-                                    <h2><?php esc_html_e('Enjoying the plugin?', 'boundary-map'); ?></h2>
-                                    <p><?php esc_html_e('If Boundary Map is helping your site, you can support future updates and maintenance with a coffee.', 'boundary-map'); ?></p>
-                                </div>
-                                <p class="ach-support-actions">
-                                    <a href="<?php echo esc_url($support_url); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer">
-                                        <?php esc_html_e('Support on Buy Me a Coffee', 'boundary-map'); ?>
-                                    </a>
-                                </p>
-                            </section>
-                        <?php endif; ?>
                     </div>
                 </div>
 

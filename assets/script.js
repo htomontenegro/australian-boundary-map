@@ -1083,6 +1083,8 @@ function drawEntryMarkers(entryArray) {
       icon: createPinIcon(ev, false),
     });
 
+    marker.bindPopup(createMarkerPopupContent(ev));
+
     if (MARKER_TAG_MODE === "visible") {
       marker.bindTooltip(createMarkerTooltipContent(ev), {
         permanent: true,
@@ -1092,8 +1094,6 @@ function drawEntryMarkers(entryArray) {
         interactive: false,
         className: "entry-marker-tag-tooltip",
       });
-    } else {
-      marker.bindPopup(createMarkerPopupContent(ev));
     }
 
     marker.on("click", () => {

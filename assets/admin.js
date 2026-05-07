@@ -354,7 +354,6 @@ function initConfigPage() {
   const subdivisionLabel = document.getElementById("ach-config-subdivision-label");
   const previewTitle = document.getElementById("ach-config-preview-title");
   const currentBoundary = document.getElementById("ach-config-current-boundary");
-  const previewLegend = document.getElementById("ach-config-map-legend");
   const generateBtn = document.getElementById("ach-config-generate-shortcode");
   const copyBtn = document.getElementById("ach-config-copy-shortcode");
   const shortcodeOutput = document.getElementById("ach-config-shortcode-output");
@@ -396,8 +395,6 @@ function initConfigPage() {
 
   let boundaryLayer = null;
   let previewRequestId = 0;
-  const previewCategories = getAdminCategories().filter((category) => category.id !== "All");
-
   const getPresetValue = (presetEl, customEl, fallbackValue) => {
     if (!presetEl) {
       return fallbackValue;
@@ -523,45 +520,6 @@ function initConfigPage() {
       sidebarPanel,
       markerTag,
     });
-  };
-
-  const updatePreviewLegend = () => {
-    if (!previewLegend) {
-      return;
-    }
-
-    const showCategoryBox = !categoryBoxSelect || categoryBoxSelect.value !== "0";
-    previewLegend.innerHTML = "";
-
-    if (!showCategoryBox || !previewCategories.length) {
-      previewLegend.hidden = true;
-      return;
-    }
-
-    const title = document.createElement("h6");
-    title.className = "ach-config-map-legend__title";
-    title.textContent = "Categories";
-    previewLegend.appendChild(title);
-
-    previewCategories.forEach((category) => {
-      const item = document.createElement("div");
-      item.className = "ach-config-map-legend__item";
-
-      const swatch = document.createElement("span");
-      swatch.className = "ach-config-map-legend__swatch";
-      if (category.color) {
-        swatch.style.backgroundColor = category.color;
-      }
-
-      const label = document.createElement("span");
-      label.textContent = category.label || category.id;
-
-      item.appendChild(swatch);
-      item.appendChild(label);
-      previewLegend.appendChild(item);
-    });
-
-    previewLegend.hidden = false;
   };
 
   const updatePreview = async () => {
@@ -764,7 +722,6 @@ function initConfigPage() {
     control.addEventListener(eventName, () => {
       updateShortcodeSettingVisibility();
       updateShortcodeOutput();
-      updatePreviewLegend();
 
       if (
         control === zoomModeSelect ||
@@ -781,7 +738,6 @@ function initConfigPage() {
   renderSelectors();
   updateShortcodeSettingVisibility();
   updateShortcodeOutput();
-  updatePreviewLegend();
   updatePreview();
 }
 

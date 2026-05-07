@@ -1091,15 +1091,6 @@ class Boundary_Map_Core
 
         add_submenu_page(
             'boundary-map-entries',
-            __('Tools', 'boundary-map'),
-            __('Tools', 'boundary-map'),
-            $manage_capability,
-            'boundary-map-tools',
-            array($this, 'render_tools_page')
-        );
-
-        add_submenu_page(
-            'boundary-map-entries',
             __('Information', 'boundary-map'),
             __('Information', 'boundary-map'),
             $manage_capability,
@@ -1207,7 +1198,7 @@ class Boundary_Map_Core
             return;
         }
         ?>
-        <div class="notice notice-info ach-support-notice">
+        <div class="notice notice-info is-dismissible ach-support-notice">
             <p>
                 <span class="ach-support-badge" style="display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:999px;background:#fff1c2;color:#7a4b00;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;">
                     <?php esc_html_e('Support', 'boundary-map'); ?>
@@ -1401,7 +1392,6 @@ class Boundary_Map_Core
         });
 
         $add_url = add_query_arg('page', 'boundary-map-add-entry', admin_url('admin.php'));
-        $tools_url = add_query_arg('page', 'boundary-map-tools', admin_url('admin.php'));
         $base_url = add_query_arg('page', 'boundary-map-entries', admin_url('admin.php'));
         $list_url = add_query_arg(array('orderby' => $orderby, 'order' => $order), $base_url);
         if ($search !== '') $list_url = add_query_arg('s', $search, $list_url);
@@ -1430,7 +1420,6 @@ class Boundary_Map_Core
                     </div>
                     <p>
                         <a href="<?php echo esc_url($add_url); ?>" class="button button-primary"><?php esc_html_e('Add First Entry', 'boundary-map'); ?></a>
-                        <a href="<?php echo esc_url($tools_url); ?>" class="button button-secondary"><?php esc_html_e('Open Import / Export Tools', 'boundary-map'); ?></a>
                     </p>
                 </div>
             <?php endif; ?>
