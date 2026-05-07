@@ -1,0 +1,29 @@
+{
+    "categories": [
+        {
+            "id": "All",
+            "label": "All Events",
+            "color": "#44db12"
+        },
+        {
+            "id": "Education",
+            "label": "Education",
+            "color": "#930fc6"
+        },
+        {
+            "id": "Health",
+            "label": "Health",
+            "color": "#d81161"
+        },
+        {
+            "id": "Community",
+            "label": "Community",
+            "color": "#d62c2c"
+        },
+        {
+            "id": "Sports",
+            "label": "Sports",
+            "color": "#61accc"
+        }
+    ]
+}

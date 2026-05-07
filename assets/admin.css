@@ -1,0 +1,438 @@
+/* Sortable table headers */
+.ach-map-admin table.widefat thead th.sortable a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+.ach-map-admin table.widefat thead th.sortable a:hover {
+  color: #2271b1;
+}
+.ach-map-admin table.widefat thead th.sortable .sorting-indicator {
+  visibility: hidden;
+  margin-left: 4px;
+}
+.ach-map-admin table.widefat thead th.sortable:hover .sorting-indicator,
+.ach-map-admin table.widefat thead th.sortable.sorted .sorting-indicator {
+  visibility: visible;
+}
+.ach-map-admin table.widefat thead th.sortable .sorting-indicator::before {
+  content: "\f156";
+  font: normal 20px/1 dashicons;
+  speak: never;
+}
+.ach-map-admin table.widefat thead th.sortable.sorted.asc .sorting-indicator::before {
+  content: "\f142";
+}
+.ach-map-admin table.widefat thead th.sortable.sorted.desc .sorting-indicator::before {
+  content: "\f140";
+}
+
+.ach-map-admin .form-table th {
+  width: 180px;
+}
+.ach-map-admin .ach-form {
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+.ach-map-admin .ach-config-form {
+  max-width: 1480px;
+}
+.ach-map-admin .ach-entry-form {
+  max-width: 1400px;
+}
+.ach-map-admin .ach-categories-form {
+  max-width: none;
+}
+.ach-map-admin table.widefat td,
+.ach-map-admin table.widefat th {
+  vertical-align: middle;
+}
+.ach-geo-filled {
+  border-color: #46b450; /* WP green */
+  box-shadow: 0 0 0 1px rgba(70, 180, 80, 0.35);
+}
+
+.ach-map-admin .ach-config-preview {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #dcdcde;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.ach-map-admin .ach-config-preview__header {
+  margin-bottom: 12px;
+}
+
+.ach-map-admin .ach-config-preview__header h2 {
+  margin: 0 0 4px;
+}
+
+.ach-map-admin #ach-config-preview-title {
+  margin: 0;
+  color: #50575e;
+}
+
+.ach-map-admin .ach-config-shortcode {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #dcdcde;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.ach-map-admin .ach-config-shortcode__header {
+  margin-bottom: 12px;
+}
+
+.ach-map-admin .ach-config-shortcode__header h2 {
+  margin: 0 0 4px;
+}
+
+.ach-map-admin .ach-config-shortcode__header p {
+  margin: 0;
+  color: #50575e;
+}
+
+.ach-map-admin .ach-config-shortcode-settings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.ach-map-admin .ach-config-shortcode-field {
+  min-width: 0;
+}
+
+.ach-map-admin .ach-config-shortcode-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.ach-map-admin .ach-config-shortcode-field input,
+.ach-map-admin .ach-config-shortcode-field select {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ach-map-admin .ach-config-shortcode__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ach-map-admin #ach-config-shortcode-output {
+  min-height: 86px;
+}
+
+.ach-map-admin #ach-config-map {
+  height: 540px;
+  border: 1px solid #dcdcde;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ach-map-admin .ach-config-map-wrap {
+  position: relative;
+}
+
+.ach-map-admin .ach-config-map-legend {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 500;
+  pointer-events: none;
+  min-width: 170px;
+  max-width: 220px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 22px;
+  box-shadow: 0 14px 36px rgba(17, 24, 39, 0.16);
+  backdrop-filter: blur(8px);
+}
+
+.ach-map-admin .ach-config-map-legend[hidden] {
+  display: none;
+}
+
+.ach-map-admin .ach-config-map-legend__title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.ach-map-admin .ach-config-map-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ach-map-admin .ach-config-map-legend__item + .ach-config-map-legend__item {
+  margin-top: 10px;
+}
+
+.ach-map-admin .ach-config-map-legend__swatch {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  border-radius: 999px;
+  background: #4B7CD5;
+}
+
+.ach-map-admin.ach-config-page {
+  max-width: 1480px;
+}
+
+.ach-map-admin .ach-config-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.ach-map-admin .ach-config-main,
+.ach-map-admin .ach-config-sidebar {
+  display: grid;
+  gap: 24px;
+}
+
+.ach-map-admin .ach-config-boundary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 20px;
+}
+
+.ach-map-admin .ach-config-boundary-field {
+  min-width: 0;
+}
+
+.ach-map-admin .ach-config-boundary-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.ach-map-admin .ach-config-boundary-field select,
+.ach-map-admin .ach-config-boundary-field textarea,
+.ach-map-admin .ach-config-boundary-field input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ach-map-admin .ach-config-boundary-field .description {
+  margin-top: 8px;
+}
+
+.ach-map-admin .ach-entry-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(360px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.ach-map-admin .ach-entry-main,
+.ach-map-admin .ach-entry-sidebar {
+  display: grid;
+  gap: 24px;
+}
+
+.ach-map-admin .ach-entry-card {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #dcdcde;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.ach-map-admin .ach-entry-card__header {
+  margin-bottom: 16px;
+}
+
+.ach-map-admin .ach-entry-card__header h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.ach-map-admin .ach-entry-card__header p {
+  margin: 0;
+  color: #50575e;
+}
+
+.ach-map-admin .ach-entry-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+}
+
+.ach-map-admin .ach-entry-field {
+  min-width: 0;
+}
+
+.ach-map-admin .ach-entry-field--span-2 {
+  grid-column: 1 / -1;
+}
+
+.ach-map-admin .ach-entry-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.ach-map-admin .ach-entry-field input,
+.ach-map-admin .ach-entry-field select,
+.ach-map-admin .ach-entry-field textarea {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ach-map-admin .ach-entry-image-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.ach-map-admin .ach-entry-image-row input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ach-map-admin .ach-entry-image-preview {
+  margin-top: 14px;
+}
+
+.ach-map-admin .ach-entry-boundary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ach-map-admin .ach-entry-boundary-field {
+  min-width: 0;
+}
+
+.ach-map-admin .ach-entry-boundary-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.ach-map-admin .ach-entry-boundary-field select {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ach-map-admin .ach-entry-boundary-summary {
+  margin: 12px 0 0;
+  font-weight: 600;
+}
+
+.ach-map-admin .ach-entry-coords-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ach-map-admin .ach-entry-coords-row input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ach-map-admin .ach-entry-map {
+  height: 480px;
+  border: 1px solid #dcdcde;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ach-map-admin.ach-categories-page {
+  max-width: 1480px;
+}
+
+.ach-map-admin .ach-categories-layout {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+
+.ach-map-admin .ach-category-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+}
+
+.ach-map-admin .ach-category-field {
+  min-width: 0;
+}
+
+.ach-map-admin .ach-category-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.ach-map-admin .ach-category-field input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ach-map-admin .ach-category-actions {
+  margin-top: 18px;
+}
+
+.ach-map-admin .ach-category-list-card {
+  overflow: hidden;
+}
+
+.ach-map-admin .ach-table-wrap {
+  overflow-x: auto;
+}
+
+.ach-map-admin .ach-config-footer {
+  margin-top: 24px;
+}
+
+.ach-map-admin .ach-config-footer .submit {
+  margin: 0;
+  padding: 0;
+}
+
+.ach-map-admin .ach-config-footer .button-primary {
+  min-width: 180px;
+}
+
+@media (max-width: 1180px) {
+  .ach-map-admin .ach-config-layout,
+  .ach-map-admin .ach-entry-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 782px) {
+  .ach-map-admin .ach-config-boundary-grid,
+  .ach-map-admin .ach-config-shortcode-settings,
+  .ach-map-admin .ach-entry-fields,
+  .ach-map-admin .ach-category-fields,
+  .ach-map-admin .ach-entry-boundary-grid,
+  .ach-map-admin .ach-entry-coords-row,
+  .ach-map-admin .ach-entry-image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ach-map-admin #ach-config-map {
+    height: 420px;
+  }
+
+  .ach-map-admin .ach-config-map-legend {
+    top: 14px;
+    left: 14px;
+    min-width: 150px;
+    padding: 14px 16px;
+  }
+}

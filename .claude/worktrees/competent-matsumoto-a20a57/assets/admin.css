@@ -1,0 +1,16 @@
+
+.ach-map-admin .form-table th {
+  width: 180px;
+}
+.ach-map-admin .ach-form {
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+.ach-map-admin table.widefat td,
+.ach-map-admin table.widefat th {
+  vertical-align: middle;
+}
+.ach-geo-filled {
+  border-color: #46b450; /* WP green */
+  box-shadow: 0 0 0 1px rgba(70, 180, 80, 0.35);
+}
