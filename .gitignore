@@ -1,0 +1,7 @@
+.claude/
+.cursor/
+# macOS temporary files
+.DS_Store
+
+# Local audit and issue files
+ISSUES_AND_FIXES.md
