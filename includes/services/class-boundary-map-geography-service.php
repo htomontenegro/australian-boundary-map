@@ -31,10 +31,10 @@ class Boundary_Map_Geography_Service
                             'color' => '#4B7CD5',
                             'children' => array(
                                 array(
-                                    'id' => 'berowra',
-                                    'label' => 'Berowra',
-                                    'displayName' => 'Berowra',
-                                    'geojson' => 'E_NSW24_region1.json',
+                                    'id' => 'sydney',
+                                    'label' => 'Sydney',
+                                    'displayName' => 'Sydney',
+                                    'geojson' => 'federal_sydney_2025.geojson',
                                     'color' => '#4B7CD5',
                                     'children' => array(),
                                 ),
@@ -107,9 +107,7 @@ class Boundary_Map_Geography_Service
 
         $subdivision = null;
         if (!empty($area['children']) && is_array($area['children'])) {
-            if (!empty($scope['id']) && $scope['id'] === 'federal') {
-                $subdivision = self::get_child_by_id($area['children'], 'berowra');
-            }
+            $subdivision = self::get_child_by_id($area['children'], 'sydney');
 
             if (!$subdivision) {
                 $subdivision = $area['children'][0];

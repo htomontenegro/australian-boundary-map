@@ -345,7 +345,7 @@
               "id": "sydney",
               "label": "Sydney",
               "displayName": "Sydney",
-              "geojsonUrl": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2025/CED/MapServer/0/query?where=ced_code_2025%3D%27141%27&outFields=CED_CODE_2025%2CCED_NAME_2025&returnGeometry=true&outSR=4326&f=geojson",
+              "geojson": "federal_sydney_2025.geojson",
               "color": "#4B7CD5",
               "children": []
             },

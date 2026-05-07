@@ -139,9 +139,9 @@ function normaliseGeographyConfig(raw) {
             color: DEFAULT_BOUNDARY_COLOR,
             children: [
               {
-                id: "berowra",
-                label: "Berowra",
-                displayName: "Berowra",
+                id: "sydney",
+                label: "Sydney",
+                displayName: "Sydney",
                 geojson: fallbackGeojson,
                 color: DEFAULT_BOUNDARY_COLOR,
                 children: [],
@@ -239,12 +239,12 @@ function getFallbackGeojsonFile() {
   const regionUrl =
     window.BOUNDARY_MAP_CONFIG && typeof BOUNDARY_MAP_CONFIG.regionUrl === "string"
       ? BOUNDARY_MAP_CONFIG.regionUrl
-      : "E_NSW24_region1.json";
+      : "federal_sydney_2025.geojson";
 
   try {
     const url = new URL(regionUrl, window.location.href);
     const parts = url.pathname.split("/");
-    return parts[parts.length - 1] || "E_NSW24_region1.json";
+    return parts[parts.length - 1] || "federal_sydney_2025.geojson";
   } catch (err) {
     return regionUrl;
   }
@@ -701,7 +701,7 @@ function initGeographyControls() {
 
 function resolveBoundaryUrl(node) {
   if (!node) {
-    return (window.BOUNDARY_MAP_CONFIG && BOUNDARY_MAP_CONFIG.regionUrl) || "E_NSW24_region1.json";
+    return (window.BOUNDARY_MAP_CONFIG && BOUNDARY_MAP_CONFIG.regionUrl) || "federal_sydney_2025.geojson";
   }
 
   if (node.geojsonUrl) {
@@ -720,7 +720,7 @@ function resolveBoundaryUrl(node) {
     return `${baseUrl}${node.geojson}`;
   }
 
-  return (window.BOUNDARY_MAP_CONFIG && BOUNDARY_MAP_CONFIG.regionUrl) || "E_NSW24_region1.json";
+  return (window.BOUNDARY_MAP_CONFIG && BOUNDARY_MAP_CONFIG.regionUrl) || "federal_sydney_2025.geojson";
 }
 
 function getBoundaryPreviewState() {

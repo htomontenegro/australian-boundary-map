@@ -478,6 +478,13 @@ function initConfigPage() {
     );
   };
 
+  const syncPreviewViewport = (bounds = null) => {
+    requestAnimationFrame(() => {
+      map.invalidateSize(false);
+      applyPreviewViewport(bounds);
+    });
+  };
+
   const updateShortcodeSettingVisibility = () => {
     if (widthCustomWrap && widthPreset) {
       widthCustomWrap.hidden = widthPreset.value !== "custom";
@@ -541,7 +548,7 @@ function initConfigPage() {
     }
 
     if (!preview.nodes.length) {
-      applyPreviewViewport();
+      syncPreviewViewport();
       return;
     }
 
@@ -569,7 +576,7 @@ function initConfigPage() {
 
       const mergedGeoJSON = combineGeoJSONPayloads(boundaryItems.filter(Boolean));
       if (!mergedGeoJSON.features.length) {
-        applyPreviewViewport();
+        syncPreviewViewport();
         return;
       }
 
@@ -598,7 +605,7 @@ function initConfigPage() {
       }).addTo(map);
 
       const bounds = boundaryLayer.getBounds();
-      applyPreviewViewport(bounds);
+      syncPreviewViewport(bounds);
     } catch (err) {
       console.error("Failed to load config preview boundary:", err);
     }
@@ -730,7 +737,7 @@ function initConfigPage() {
         control === maxZoomInput ||
         control === scrollWheelSelect
       ) {
-        applyPreviewViewport(boundaryLayer ? boundaryLayer.getBounds() : null);
+        syncPreviewViewport(boundaryLayer ? boundaryLayer.getBounds() : null);
       }
     });
   });
