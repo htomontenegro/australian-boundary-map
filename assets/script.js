@@ -1007,7 +1007,7 @@ function showEntryDetails(ev) {
   const backBtn = document.createElement("a");
   backBtn.href = "#";
   backBtn.id = "back-to-list";
-  backBtn.textContent = "<- Back to results";
+  backBtn.textContent = "Back to results";
   backWrap.appendChild(backBtn);
   detailsEl.appendChild(backWrap);
 
@@ -1213,8 +1213,8 @@ function initLegend() {
 
   const title = document.createElement("h6");
   title.className = "legend-title mb-1";
-  title.textContent = "Categories";
-  legend.appendChild(title);
+  //title.textContent = "Categories";
+  //legend.appendChild(title);
 
   categories
     .filter((cat) => cat.id !== ALL_CATEGORY_ID)
@@ -1452,10 +1452,9 @@ async function init() {
   buildFuseIndex();
   initCategoryTabs();
   initSearch();
-  initLegend();
+  //initLegend();
 
   activeCategoryId = categories[0]?.id || ALL_CATEGORY_ID;
-  refreshCategoryTabs();
   applySearchAndCategory();
 }
 

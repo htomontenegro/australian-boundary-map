@@ -12,6 +12,7 @@ class Boundary_Map_Config_Page_Renderer
         $show_sidebar_panel = !empty($args['show_sidebar_panel']);
         $marker_tag_mode = isset($args['marker_tag_mode']) ? $args['marker_tag_mode'] : 'clickable';
         $notice_message = isset($args['notice_message']) ? $args['notice_message'] : '';
+        $support_url = isset($args['support_url']) ? $args['support_url'] : '';
         ?>
         <div class="wrap ach-map-admin ach-config-page">
             <h1><?php esc_html_e('Australian Boundary Map – Config', 'boundary-map'); ?></h1>
@@ -231,6 +232,21 @@ class Boundary_Map_Config_Page_Renderer
                             <textarea id="ach-config-shortcode-output" class="large-text code" rows="3" readonly><?php echo esc_textarea('[boundary_map]'); ?></textarea>
                             <p class="description"><?php esc_html_e('Generate the shortcode after choosing Australia, a boundary level, a state or territory, or a specific region/division.', 'boundary-map'); ?></p>
                         </div>
+
+                        <?php if ($support_url !== '') : ?>
+                            <section class="ach-entry-card ach-support-card">
+                                <div class="ach-entry-card__header">
+                                    <span class="ach-support-badge"><?php esc_html_e('Support', 'boundary-map'); ?></span>
+                                    <h2><?php esc_html_e('Enjoying the plugin?', 'boundary-map'); ?></h2>
+                                    <p><?php esc_html_e('If Boundary Map is helping your site, you can support future updates and maintenance with a coffee.', 'boundary-map'); ?></p>
+                                </div>
+                                <p class="ach-support-actions">
+                                    <a href="<?php echo esc_url($support_url); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer">
+                                        <?php esc_html_e('Support on Buy Me a Coffee', 'boundary-map'); ?>
+                                    </a>
+                                </p>
+                            </section>
+                        <?php endif; ?>
                     </div>
                 </div>
 

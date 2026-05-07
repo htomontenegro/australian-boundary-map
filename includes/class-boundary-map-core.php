@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) {
 
 class Boundary_Map_Core
 {
+    private const SUPPORT_URL = 'https://buymeacoffee.com/htomontenegro';
 
     private $entries_file;
     private $categories_file;
@@ -25,6 +26,11 @@ class Boundary_Map_Core
         }
 
         return $this->version;
+    }
+
+    private function get_support_url()
+    {
+        return self::SUPPORT_URL;
     }
 
     public static function activate()
@@ -1183,6 +1189,36 @@ class Boundary_Map_Core
             'BOUNDARY_MAP_ADMIN',
             apply_filters('boundary_map_admin_config', $admin_config, $hook, $this)
         );
+    }
+
+    public function render_support_dashboard_notice()
+    {
+        if (!$this->user_can_manage_boundary_map()) {
+            return;
+        }
+
+        global $pagenow;
+
+        $page = isset($_GET['page']) ? sanitize_text_field(wp_unslash($_GET['page'])) : '';
+        $is_wordpress_dashboard = $pagenow === 'index.php';
+        $is_plugin_home = $page === 'boundary-map-entries';
+
+        if (!$is_wordpress_dashboard && !$is_plugin_home) {
+            return;
+        }
+        ?>
+        <div class="notice notice-info ach-support-notice">
+            <p>
+                <span class="ach-support-badge" style="display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:999px;background:#fff1c2;color:#7a4b00;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;">
+                    <?php esc_html_e('Support', 'boundary-map'); ?>
+                </span>
+                <?php esc_html_e('Do you like the plugin? Support me and help keep Boundary Map improving.', 'boundary-map'); ?>
+                <a href="<?php echo esc_url($this->get_support_url()); ?>" class="button button-secondary" target="_blank" rel="noopener noreferrer">
+                    <?php esc_html_e('Buy Me a Coffee', 'boundary-map'); ?>
+                </a>
+            </p>
+        </div>
+        <?php
     }
     /* ---------------------------------------------------------
      * Public REST data endpoints
@@ -2468,6 +2504,7 @@ class Boundary_Map_Core
             'show_sidebar_panel' => $this->get_saved_show_sidebar_panel(),
             'marker_tag_mode' => $this->get_saved_marker_tag_mode(),
             'notice_message' => $notice_message,
+            'support_url' => $this->get_support_url(),
         ));
     }
 

@@ -15,6 +15,7 @@ class Boundary_Map_Admin_Controller
         add_action('admin_menu', array($this->core, 'register_admin_menu'));
         add_action('admin_init', array($this->core, 'maybe_upgrade_plugin'));
         add_action('admin_init', array($this->core, 'maybe_migrate_on_load'));
+        add_action('admin_notices', array($this->core, 'render_support_dashboard_notice'));
         add_action('admin_enqueue_scripts', array($this->core, 'enqueue_admin_assets'));
         add_action('admin_footer', array($this->core, 'remove_admin_menu_separator'));
         add_action('admin_post_boundary_map_bulk_entries', array($this->core, 'handle_bulk_entries'));

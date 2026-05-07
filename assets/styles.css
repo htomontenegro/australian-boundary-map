@@ -79,6 +79,15 @@
   height: 100%;
 }
 
+.map-search-overlay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 1100;
+  width: min(420px, calc(100% - 40px));
+  transform: translateX(-50%);
+}
+
 /* Floating sidebar overlay on the right */
 #sidebar {
   position: absolute;
@@ -343,11 +352,11 @@ Active buttons
 
 /* Hover shadow + expand on focus */
 .search-container .input-group {
-  max-width: 260px;
+  max-width: 100%;
   transition:
     box-shadow 0.2s ease,
     width 0.25s ease;
-  width: 180px;
+  width: 100%;
 }
 
 .search-container .input-group:hover {
@@ -355,7 +364,7 @@ Active buttons
 }
 
 .search-container .input-group:focus-within {
-  width: 260px;
+  width: 100%;
 }
 
 /* -------------------------
@@ -487,6 +496,10 @@ Active buttons
 @media (max-width: 768px) {
   #map-container {
     height: 420px;
+  }
+
+  .map-search-overlay {
+    width: calc(100% - 40px);
   }
 
   /* Mobile: sidebar becomes a bottom drawer over the map */
